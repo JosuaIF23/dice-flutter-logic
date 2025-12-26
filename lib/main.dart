@@ -1,16 +1,18 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         appBar: AppBar(
           title: Text(
             'Dicee',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blue,
           centerTitle: true,
         ),
         body: DicePage(),
@@ -38,7 +40,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = 6;
+                  leftDiceNumber = Random().nextInt(6) + 1;
                 });
                 print(
                   'left button pressed value = $leftDiceNumber',
@@ -53,7 +55,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  rightDiceNumber = 5;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                 });
                 print('Right Button got pressed value = $rightDiceNumber');
               },
